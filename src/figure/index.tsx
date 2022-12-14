@@ -52,10 +52,10 @@ const Figure: FC<Props> = (props) => {
       id={props.figure.id}
     >
       <svg
+        fill='none'
         width='100%'
         height='100%'
         viewBox='0 0 72 72'
-        fill='none'
         xmlns='http://www.w3.org/2000/svg'
       >
         {getFigure()}
