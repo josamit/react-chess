@@ -3,7 +3,7 @@ export enum Colors {
   BLACK = 'black',
 }
 
-export enum Figures {
+export enum Figure {
   BISHOP = 'bishop',
   KING = 'king',
   KNIGHT = 'knight',
@@ -36,7 +36,7 @@ export const BoardNumberByLetter: { [key: string]: number } = {
 
 export interface FigureData {
   id: string;
-  name: Figures;
+  name: Figure;
   x: number;
   y: number;
   color: Colors;

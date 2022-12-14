@@ -1,13 +1,8 @@
 import React, { FC } from 'react';
-import { FigureData, Figures } from '../types/game';
-import Bishop from './bishop';
-import King from './king';
-import Knight from './knight';
-import Pawn from './pawn';
-import Queen from './queen';
-import Rook from './rook';
+import { FigureData } from '../types/game';
 import styles from './figure.module.scss';
 import classNames from 'classnames';
+import { getFigure } from '../utils/figure';
 
 interface Props {
   figure: FigureData;
@@ -15,31 +10,11 @@ interface Props {
   isSelected?: boolean;
   isEatable?: boolean;
 }
+
 const Figure: FC<Props> = (props) => {
   const position = {
     left: `${(props.figure.x - 1) * 12.5}%`,
     bottom: `${(props.figure.y - 1) * 12.5}%`,
-  };
-
-  const color = props.figure.color;
-
-  const getFigure = (): React.ReactElement => {
-    switch (props.figure.name) {
-      case Figures.BISHOP:
-        return <Bishop color={color} />;
-      case Figures.KING:
-        return <King color={color} />;
-      case Figures.KNIGHT:
-        return <Knight color={color} />;
-      case Figures.PAWN:
-        return <Pawn color={color} />;
-      case Figures.QUEEN:
-        return <Queen color={color} />;
-      case Figures.ROOK:
-        return <Rook color={color} />;
-      default:
-        throw new Error('Not implemented!!');
-    }
   };
 
   return (
@@ -58,7 +33,7 @@ const Figure: FC<Props> = (props) => {
         viewBox='0 0 72 72'
         xmlns='http://www.w3.org/2000/svg'
       >
-        {getFigure()}
+        {getFigure(props.figure.name, props.figure.color)}
       </svg>
     </div>
   );
