@@ -1,4 +1,6 @@
 .gameContainer {
+    height: 88vh;
+    padding: 1rem;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -6,11 +8,11 @@
 
 .gameLogContainer {
     display: flex;
-    flex: 1;
+    flex-grow: 1;
     margin-left: 1rem;
 }
 
 .boardContainer {
     display: flex;
-    flex: 1;
+    flex-grow: 3;
 }

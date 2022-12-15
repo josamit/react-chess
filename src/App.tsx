@@ -1,14 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './redux/store';
 import './index.css';
 import './reset.css';
-import Game from './game';
+import store from './redux/store';
+import { router } from './router';
+import { RouterProvider } from 'react-router-dom';
 
 const App: React.FC = () => (
   <div className='app'>
     <Provider store={store}>
-      <Game />
+      <RouterProvider router={router} />
     </Provider>
   </div>
 );

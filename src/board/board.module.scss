@@ -1,13 +1,13 @@
 .boardWrapper {
-  width: 95vh;
+  width: 100vh !important;
   min-width: 300px;
+  overflow: hidden;
   min-height: 300px;
-  position: relative;
-  padding-right: 12px;
   padding-top: 12px;
   padding-left: 48px;
+  position: relative;
+  padding-right: 12px;
   padding-bottom: 52px;
-  overflow: hidden;
   background: #F4F7FA;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 4px );
@@ -65,7 +65,6 @@
   top: calc(50% - 12px);
   opacity: 0;
   background-color: #7B61FF;
-
   transition: all .2s;
 }
 
@@ -113,24 +112,4 @@
 
 .cellSelected {
   background-color: #B1A7FC;
-}
-
-.gameWon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, .7);
-  color: white;
-  font-size: 20px;
-}
-
-.gameWonButton {
-  color: inherit;
-
 }
