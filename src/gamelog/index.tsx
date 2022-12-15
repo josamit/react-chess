@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import styles from './gamelog.module.scss';
-import { Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { GameState, History } from '../redux/gameSlice';
@@ -9,7 +8,6 @@ import { getFigure } from '../utils/figure';
 
 const GameLog: FC = () => {
   const { history } = useSelector<RootState, GameState>((state) => state.game);
-  console.log('history', history);
   const sliceIntoChunks = (arr: History[], chunkSize: number): History[][] => {
     const res = [];
     for (let i = 0; i < arr.length; i += chunkSize) {
@@ -23,7 +21,7 @@ const GameLog: FC = () => {
 
   return (
     <div className={styles.gameLogWrapper}>
-      <Table striped bordered hover responsive>
+      <table>
         <tbody>
           {historyChunks.map((item, index) => (
             <tr key={JSON.stringify(item)}>
@@ -69,7 +67,7 @@ const GameLog: FC = () => {
             </tr>
           ))}
         </tbody>
-      </Table>
+      </table>
     </div>
   );
 };
